@@ -1,0 +1,23 @@
+class Singleton:
+    """
+    Certainly! The Singleton pattern is a design pattern that ensures a class has only one
+    instance and provides a global point of access to that instance. Here's an example of a
+    simple Singleton pattern in Python: 
+    """
+    _instance = None
+
+    def __new__(cls):
+        """
+        The __new__ method is overridden to control the instantiation of the object.
+        If an instance doesn't exist, a new instance is created and stored in the 
+        _instance class variable.
+        """
+        if not cls._instance:
+            cls._instance = super(Singleton, cls).__new__(cls)
+        return cls._instance
+
+# Example usage:
+singleton_instance1 = Singleton()
+singleton_instance2 = Singleton()
+
+print(singleton_instance1 is singleton_instance2)  # This should print True
