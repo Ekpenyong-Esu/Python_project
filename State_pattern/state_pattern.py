@@ -6,9 +6,12 @@ to these classes. The object, known as the context, maintains a reference to the
 object and switches between states as needed.
 """
 
+from abc import ABC, abstractmethod
 
 # State interface
 class State:
+
+    @abstractmethod
     def handle(self):
         pass
 
